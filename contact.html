@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="html" href="index.html" />
+  </head>
+
+  <body>
+    <div class="logo">
+      <a href="index.html">
+        <img src="IMG/Logo.png" alt="logo" />
+        <p>Vous voulez nous contacter ?</p>
+      </a>
+    </div>
+    <div class="form-container">
+      <h2>Nous contacter</h2>
+      <form class="form" action="contact_process.php" method="POST">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input required="" name="email" id="email" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label for="textarea">Comment pouvons-nous vous aider?</label>
+          <textarea required="" cols="50" rows="10" id="textarea" name="textarea"></textarea>
+        </div>
+        <button type="submit" class="form-submit-btn center-btn">Soumettre</button>
+      </form>
+      <button id="schedule-meet" class="meet-btn">Prendre rendez-vous sur Google Meet</button>
+    </div>
+
+    <script>
+      document.getElementById('schedule-meet').addEventListener('click', function() {
+        // Lien pour créer une nouvelle réunion Google Meet
+        const meetLink = 'https://meet.google.com/new'; 
+        window.open(meetLink, '_blank'); // Ouvre le lien dans un nouvel onglet
+      });
+
+      document.querySelector('.form').addEventListener('submit', function(event) {
+        // Retirez event.preventDefault() pour permettre la soumission du formulaire
+        const emailValue = document.getElementById('email').value;
+        const textareaValue = document.getElementById('textarea').value;
+        console.log('E-mail soumis :', emailValue);
+        console.log('Message soumis :', textareaValue);
+        // Vous pouvez ajouter ici le code pour traiter les valeurs soumises
+      });
+    </script>
+  </body>
+</html>

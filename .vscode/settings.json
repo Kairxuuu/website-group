@@ -1,0 +1,6 @@
+"PeT.background": {
+    "image": "Documents/Images/pet.jpg", 
+    "opacity": 0.8,  
+    "size": "cover",  
+    "position": "center"
+}
